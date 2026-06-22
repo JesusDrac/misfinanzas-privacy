@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Política de Privacidad — Mis Finanzas</title>
+<style>
+  :root {
+    --navy:      #1A3266;
+    --deep:      #0F1E3E;
+    --text:      #1A1A2E;
+    --muted:     #5A6480;
+    --ground:    #FFFFFF;
+    --rule:      #E4E8F0;
+    --green:     #1B6B3A;
+    --green-bg:  #EBF5EE;
+    --font-sans: -apple-system, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: Georgia, "Times New Roman", serif;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--ground);
+    color: var(--text);
+    font-family: var(--font-serif);
+    font-size: 17px;
+    line-height: 1.7;
+  }
+
+  /* ── hero ── */
+  .hero {
+    background: var(--navy);
+    padding: 72px 32px 64px;
+  }
+  .hero-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,.5);
+    margin-bottom: 24px;
+  }
+  .hero-statement {
+    font-family: var(--font-sans);
+    font-size: clamp(32px, 6vw, 56px);
+    font-weight: 800;
+    line-height: 1.08;
+    letter-spacing: -.025em;
+    color: #fff;
+    max-width: 760px;
+    margin-bottom: 24px;
+  }
+  .hero-sub {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    line-height: 1.6;
+    color: rgba(255,255,255,.72);
+    max-width: 600px;
+    margin-bottom: 32px;
+  }
+  .hero-date {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: rgba(255,255,255,.4);
+    letter-spacing: .06em;
+  }
+
+  /* ── at a glance ── */
+  .glance {
+    background: #F4F7FC;
+    padding: 48px 32px;
+  }
+  .glance-title {
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 20px;
+  }
+  .glance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 12px;
+    max-width: 900px;
+  }
+  .glance-item {
+    background: var(--green-bg);
+    border-left: 3px solid var(--green);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 16px;
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .glance-check {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--green);
+  }
+  .glance-item-text {
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    line-height: 1.45;
+    color: var(--text);
+  }
+  .glance-item-text strong {
+    display: block;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 2px;
+  }
+  .glance-item-text span {
+    color: var(--muted);
+    font-size: 12.5px;
+  }
+
+  /* ── main content ── */
+  .content {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 56px 32px 80px;
+  }
+
+  .section { margin-bottom: 48px; }
+  .section + .section {
+    padding-top: 48px;
+    border-top: 1px solid var(--rule);
+  }
+
+  .section-title {
+    font-family: var(--font-sans);
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: -.01em;
+    color: var(--navy);
+    margin-bottom: 16px;
+  }
+
+  p { margin-bottom: 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  ul {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 14px;
+  }
+  ul li {
+    padding: 6px 0 6px 22px;
+    position: relative;
+    border-bottom: 1px solid var(--rule);
+    font-size: 16px;
+  }
+  ul li:last-child { border-bottom: none; }
+  ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--muted);
+    font-weight: 300;
+  }
+
+  .pill {
+    display: inline-block;
+    background: #EEF2FA;
+    color: var(--navy);
+    font-family: var(--font-sans);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    padding: 3px 10px;
+    border-radius: 100px;
+    margin-right: 6px;
+    margin-bottom: 4px;
+    vertical-align: middle;
+  }
+
+  .contact-block {
+    background: #F4F7FC;
+    border-radius: 10px;
+    padding: 24px 28px;
+  }
+  .contact-block p {
+    font-family: var(--font-sans);
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+  .contact-block a {
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--navy);
+    text-decoration: none;
+    border-bottom: 2px solid var(--rule);
+    transition: border-color .15s;
+  }
+  .contact-block a:hover { border-color: var(--navy); }
+
+  /* ── footer ── */
+  .footer {
+    background: var(--deep);
+    padding: 28px 32px;
+    text-align: center;
+  }
+  .footer p {
+    font-family: var(--font-sans);
+    font-size: 12px;
+    color: rgba(255,255,255,.4);
+    margin: 0;
+  }
+  .footer strong { color: rgba(255,255,255,.65); font-weight: 600; }
+
+  @media (max-width: 600px) {
+    .hero { padding: 48px 20px 40px; }
+    .glance { padding: 36px 20px; }
+    .content { padding: 40px 20px 60px; }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-eyebrow">Mis Finanzas</p>
+  <h1 class="hero-statement">Tus datos se quedan en tu teléfono.</h1>
+  <p class="hero-sub">Mis Finanzas no recopila, transmite ni vende ningún dato personal. No hay servidores propios, no hay cuentas de usuario, no hay rastreo.</p>
+  <p class="hero-date">Última actualización: julio 2026</p>
+</section>
+
+<!-- DE UN VISTAZO -->
+<section class="glance">
+  <p class="glance-title">De un vistazo — qué ocurre con cada tipo de dato</p>
+  <div class="glance-grid">
+
+    <div class="glance-item">
+      <svg class="glance-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="10" cy="10" r="8.5"/><polyline points="6.5,10.5 9,13 13.5,7.5"/>
+      </svg>
+      <div class="glance-item-text">
+        <strong>Transacciones, presupuestos, agenda</strong>
+        <span>Solo en tu dispositivo (base de datos local)</span>
+      </div>
+    </div>
+
+    <div class="glance-item">
+      <svg class="glance-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="10" cy="10" r="8.5"/><polyline points="6.5,10.5 9,13 13.5,7.5"/>
+      </svg>
+      <div class="glance-item-text">
+        <strong>Fotos en transacciones (PRO)</strong>
+        <span>Almacenadas en el dispositivo, nunca subidas</span>
+      </div>
+    </div>
+
+    <div class="glance-item">
+      <svg class="glance-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="10" cy="10" r="8.5"/><polyline points="6.5,10.5 9,13 13.5,7.5"/>
+      </svg>
+      <div class="glance-item-text">
+        <strong>Respaldo Google Drive (PRO)</strong>
+        <span>Cifrado AES-256 antes de salir del dispositivo</span>
+      </div>
+    </div>
+
+    <div class="glance-item">
+      <svg class="glance-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="10" cy="10" r="8.5"/><polyline points="6.5,10.5 9,13 13.5,7.5"/>
+      </svg>
+      <div class="glance-item-text">
+        <strong>Biometría (huella / Face ID)</strong>
+        <span>Procesada por Android OS, la app nunca la ve</span>
+      </div>
+    </div>
+
+    <div class="glance-item">
+      <svg class="glance-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="10" cy="10" r="8.5"/><polyline points="6.5,10.5 9,13 13.5,7.5"/>
+      </svg>
+      <div class="glance-item-text">
+        <strong>Estado PRO</strong>
+        <span>Guardado en almacenamiento cifrado del dispositivo</span>
+      </div>
+    </div>
+
+    <div class="glance-item">
+      <svg class="glance-check" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="10" cy="10" r="8.5"/><polyline points="6.5,10.5 9,13 13.5,7.5"/>
+      </svg>
+      <div class="glance-item-text">
+        <strong>Compra PRO</strong>
+        <span>Gestionada por Google Play, no por la app</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTENIDO DETALLADO -->
+<main class="content">
+
+  <section class="section">
+    <h2 class="section-title">1. Datos que la app maneja localmente</h2>
+    <p>Toda la información que registras en Mis Finanzas — transacciones, categorías, cuentas, presupuestos y agenda de pagos — se almacena en una base de datos local en tu dispositivo. Esta información nunca se transmite a servidores externos.</p>
+    <p><strong>Fotos adjuntas a transacciones (función PRO):</strong> si adjuntas una foto a una transacción, se guarda en el almacenamiento interno del dispositivo. No se sube a ningún servidor ni servicio de nube, salvo que actives el respaldo en Google Drive (ver sección 3).</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">2. Autenticación biométrica</h2>
+    <p>Mis Finanzas usa la API de biometría de Android para proteger el acceso a la app con huella digital o reconocimiento facial. El procesamiento ocurre íntegramente dentro del sistema operativo Android y del hardware de seguridad del dispositivo. La app nunca tiene acceso a los datos biométricos y nunca los almacena.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">3. Respaldo cifrado en Google Drive (PRO)</h2>
+    <p>Si activas el respaldo automático, la app cifra el archivo de datos con AES-256 antes de subirlo a tu propio Google Drive. El archivo cifrado solo puede ser descifrado con tu contraseña. Ni el desarrollador de Mis Finanzas ni nadie más puede acceder al contenido de ese archivo.</p>
+    <p>El uso de Google Drive está sujeto a la <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidad de Google</a>.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">4. Compras en la app (Google Play Billing)</h2>
+    <p>La compra única de Mis Finanzas PRO se procesa a través de Google Play. Los datos de pago (tarjeta, información de facturación) son gestionados exclusivamente por Google. Mis Finanzas no ve ni almacena ningún dato de pago.</p>
+    <p>La app verifica tu estado PRO consultando la caché de licencias de Google Play en cada inicio. Esta consulta no revela información personal al desarrollador.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">5. Permisos del sistema</h2>
+    <p>La app solicita solo los permisos estrictamente necesarios:</p>
+    <ul>
+      <li><span class="pill">CAMERA</span> Para adjuntar fotos a transacciones (PRO). Solo se activa cuando tú lo solicitas explícitamente.</li>
+      <li><span class="pill">USE_BIOMETRIC</span> Para la pantalla de bloqueo al abrir la app. Procesado por Android, nunca por la app.</li>
+      <li><span class="pill">INTERNET</span> Requerido por Google Play Billing para verificar la licencia PRO. La app no realiza ninguna otra conexión de red propia.</li>
+      <li><span class="pill">RECEIVE_BOOT_COMPLETED</span> Para reprogramar las notificaciones de pagos próximos tras un reinicio del dispositivo.</li>
+    </ul>
+    <p>La app no solicita permisos de acceso a contactos, ubicación, micrófono, mensajes SMS ni ningún otro dato personal.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">6. Lo que la app no hace</h2>
+    <ul>
+      <li>No crea cuentas de usuario ni solicita correo electrónico</li>
+      <li>No tiene servidores propios</li>
+      <li>No comparte datos con terceros</li>
+      <li>No incluye SDKs de analíticas, publicidad ni rastreo</li>
+      <li>No accede a cuentas bancarias ni credenciales financieras</li>
+      <li>No recopila datos de uso ni métricas de comportamiento</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">7. Cambios a esta política</h2>
+    <p>Si se realizan cambios relevantes a esta política, se publicará una versión actualizada en esta misma página con la nueva fecha. Te recomendamos revisarla periódicamente.</p>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">8. Contacto</h2>
+    <div class="contact-block">
+      <p>¿Tienes preguntas sobre esta política de privacidad? Escríbenos:</p>
+      <a href="mailto:admonjesus07@gmail.com">admonjesus07@gmail.com</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <p><strong>Mis Finanzas</strong> &nbsp;·&nbsp; Todos los derechos reservados © 2026</p>
+</footer>
+
+</body>
+</html>
